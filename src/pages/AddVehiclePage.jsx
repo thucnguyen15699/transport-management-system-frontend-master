@@ -69,7 +69,7 @@ const AddVehiclePage = () => {
     formData.append("uploadDocuments", selectedImage1);
 
     axios
-      .post("http://localhost:8080/api/transport/vehicle/add", formData, {
+      .post("http://171.228.167.35:8080/api/transport/vehicle/add", formData, {
         headers: {
           //       Authorization: "Bearer " + guide_jwtToken, // Replace with your actual JWT token
         },

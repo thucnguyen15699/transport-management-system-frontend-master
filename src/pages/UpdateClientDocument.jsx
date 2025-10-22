@@ -24,7 +24,7 @@ const UpdateClientDocument = () => {
 
     axios
       .put(
-        "http://localhost:8080/api/transport/client/document/udpate",
+        "http://171.228.167.35:8080/api/transport/client/document/udpate",
         formData,
         {
           headers: {

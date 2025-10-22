@@ -48,7 +48,7 @@ const ViewAllEmployees = () => {
 
   const retrieveAllUser = async () => {
     const response = await axios.get(
-      "http://localhost:8080/api/user/fetch/role-wise?role=Employee",
+      "http://171.228.167.35:8080/api/user/fetch/role-wise?role=Employee",
       {
         headers: {
           //   Authorization: "Bearer " + admin_jwtToken, // Replace with your actual JWT token
@@ -61,7 +61,7 @@ const ViewAllEmployees = () => {
 
   const retrieveAllUserByRole = async () => {
     const response = await axios.get(
-      "http://localhost:8080/api/user/fetch/employees?role=" +
+      "http://171.228.167.35:8080/api/user/fetch/employees?role=" +
         role +
         "&status=Active",
       {
@@ -76,7 +76,7 @@ const ViewAllEmployees = () => {
 
   const retrieveAllUserByName = async () => {
     const response = await axios.get(
-      "http://localhost:8080/api/user/fetch/employee-name-wise?name=" + name,
+      "http://171.228.167.35:8080/api/user/fetch/employee-name-wise?name=" + name,
       {
         headers: {
           //   Authorization: "Bearer " + admin_jwtToken, // Replace with your actual JWT token
@@ -96,7 +96,7 @@ const ViewAllEmployees = () => {
 
   const deleteEmployee = (employeeId, e) => {
     fetch(
-      "http://localhost:8080/api/user/employee/delete?employeeId=" + employeeId,
+      "http://171.228.167.35:8080/api/user/employee/delete?employeeId=" + employeeId,
       {
         method: "DELETE",
         headers: {

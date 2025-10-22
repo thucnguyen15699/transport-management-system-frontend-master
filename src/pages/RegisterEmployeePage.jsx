@@ -180,7 +180,7 @@ const RegisterEmployeePage = () => {
     formData.append("uploadDocuments", selectedDocuments);
 
     axios
-      .post("http://localhost:8080/api/user/employee/register", formData, {
+      .post("http://171.228.167.35:8080/api/user/employee/register", formData, {
         headers: {
           //  Authorization: "Bearer " + admin_jwtToken,
         },

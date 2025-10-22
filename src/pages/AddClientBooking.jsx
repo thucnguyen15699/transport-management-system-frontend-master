@@ -67,7 +67,7 @@ const AddClientBooking = () => {
 
   const retrieveAllVehicles = async () => {
     const response = await axios.get(
-      "http://localhost:8080/api/transport/vehicle/fetch/all",
+      "http://171.228.167.35:8080/api/transport/vehicle/fetch/all",
       {
         headers: {
           //   Authorization: "Bearer " + admin_jwtToken, // Replace with your actual JWT token
@@ -80,14 +80,14 @@ const AddClientBooking = () => {
 
   const retrieveAllClients = async () => {
     const response = await axios.get(
-      "http://localhost:8080/api/transport/client/fetch/all"
+      "http://171.228.167.35:8080/api/transport/client/fetch/all"
     );
     return response.data;
   };
 
   const retrieveAllUser = async () => {
     const response = await axios.get(
-      "http://localhost:8080/api/user/fetch/employees?role=Driver&status=Active"
+      "http://171.228.167.35:8080/api/user/fetch/employees?role=Driver&status=Active"
     );
     return response.data;
   };
@@ -184,7 +184,7 @@ const AddClientBooking = () => {
     formData.append("document", selectedDocument);
 
     axios
-      .post("http://localhost:8080/api/transport/client/booking/add", formData)
+      .post("http://171.228.167.35:8080/api/transport/client/booking/add", formData)
       .then((resp) => {
         let response = resp.data;
 

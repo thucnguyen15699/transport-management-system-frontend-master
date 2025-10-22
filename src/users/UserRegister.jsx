@@ -30,7 +30,7 @@ const UserRegister = () => {
 
     let jwtToken;
 
-    fetch("http://localhost:8080/api/user/transporter/register", {
+    fetch("http://171.228.167.35:8080/api/user/transporter/register", {
       method: "POST",
       headers: {
         Accept: "application/json",

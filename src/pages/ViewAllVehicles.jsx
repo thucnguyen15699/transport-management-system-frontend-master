@@ -34,7 +34,7 @@ const ViewAllVehicles = () => {
 
   const retrieveAllVehicles = async () => {
     const response = await axios.get(
-      "http://localhost:8080/api/transport/vehicle/fetch/all",
+      "http://171.228.167.35:8080/api/transport/vehicle/fetch/all",
       {
         headers: {
           //   Authorization: "Bearer " + admin_jwtToken, // Replace with your actual JWT token
@@ -47,7 +47,7 @@ const ViewAllVehicles = () => {
 
   const retrieveAllVehiclesByNumber = async () => {
     const response = await axios.get(
-      "http://localhost:8080/api/transport/vehicle/fetch/vehicle-no-wise?vehicleNo=" +
+      "http://171.228.167.35:8080/api/transport/vehicle/fetch/vehicle-no-wise?vehicleNo=" +
         vehicleNumber,
       {
         headers: {
@@ -68,7 +68,7 @@ const ViewAllVehicles = () => {
 
   const deleteVehicle = (vehicleId, e) => {
     fetch(
-      "http://localhost:8080/api/transport/vehicle/delete?vehicleId=" +
+      "http://171.228.167.35:8080/api/transport/vehicle/delete?vehicleId=" +
         vehicleId,
       {
         method: "DELETE",

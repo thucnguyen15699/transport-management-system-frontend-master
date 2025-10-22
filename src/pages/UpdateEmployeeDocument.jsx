@@ -24,7 +24,7 @@ const UpdateEmployeeDocument = () => {
 
     axios
       .put(
-        "http://localhost:8080/api/user/employee/document/update",
+        "http://171.228.167.35:8080/api/user/employee/document/update",
         formData,
         {
           headers: {

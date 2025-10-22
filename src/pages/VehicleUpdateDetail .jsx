@@ -47,7 +47,7 @@ const VehicleUpdateDetail = () => {
 
   const retrieveVehicle = async () => {
     const response = await axios.get(
-      `http://localhost:8080/api/transport/vehicle/fetch?vehicleId=${vehicleId}`
+      `http://171.228.167.35:8080/api/transport/vehicle/fetch?vehicleId=${vehicleId}`
     );
     return response.data;
   };
@@ -86,7 +86,7 @@ const VehicleUpdateDetail = () => {
       return;
     }
 
-    fetch("http://localhost:8080/api/transport/vehicle/detail/udpate", {
+    fetch("http://171.228.167.35:8080/api/transport/vehicle/detail/udpate", {
       method: "PUT",
       headers: {
         Accept: "application/json",
