@@ -89,7 +89,7 @@ const ClientDetail = () => {
   // Function to retrieve client data from the API
   const retrieveClient = async () => {
     const response = await axios.get(
-      `http://171.228.167.35:8080:8080/api/transport/client/fetch?clientId=${clientId}`
+      `http://171.228.167.35:8080/api/transport/client/fetch?clientId=${clientId}`
     );
     return response.data;
   };
@@ -117,7 +117,7 @@ const ClientDetail = () => {
   const handleBranchFormSubmit = (e) => {
     e.preventDefault();
 
-    fetch("http://171.228.167.35:8080:8080/api/transport/client/branch/add", {
+    fetch("http://171.228.167.35:8080/api/transport/client/branch/add", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -314,7 +314,7 @@ const ClientDetail = () => {
         </Modal.Header>
         <Modal.Body>
           <iframe
-            src={`http://171.228.167.35:8080:8080/api/user/document/${client.uploadDocuments}/view`}
+            src={`http://171.228.167.35:8080/api/user/document/${client.uploadDocuments}/view`}
             width="100%"
             height="100%"
             style={{ border: "none" }}

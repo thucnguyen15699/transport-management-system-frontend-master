@@ -24,7 +24,7 @@ const UpdateVehicleDocument = () => {
 
     axios
       .put(
-        "http://171.228.167.35:8080:8080/api/transport/vehicle/document/udpate",
+        "http://171.228.167.35:8080/api/transport/vehicle/document/udpate",
         formData,
         {
           headers: {

@@ -53,7 +53,7 @@ const UpdateClientBooking = () => {
 
   const retrieveBooking = async () => {
     const response = await axios.get(
-      `http://171.228.167.35:8080:8080/api/transport/client/booking/fetch?bookingId=${bookingId}`
+      `http://171.228.167.35:8080/api/transport/client/booking/fetch?bookingId=${bookingId}`
     );
     return response.data;
   };
@@ -102,7 +102,7 @@ const UpdateClientBooking = () => {
         ? convertToEpochTime(selectedDeliveredDateTime)
         : existingDeliveredDateTime;
 
-    fetch("http://171.228.167.35:8080:8080/api/transport/client/booking/details/udpate", {
+    fetch("http://171.228.167.35:8080/api/transport/client/booking/details/udpate", {
       method: "PUT",
       headers: {
         Accept: "application/json",

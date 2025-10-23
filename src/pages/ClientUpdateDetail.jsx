@@ -40,7 +40,7 @@ const ClientUpdateDetail = () => {
   // Fetch client data by ID
   const retrieveClient = async () => {
     const response = await axios.get(
-      `http://171.228.167.35:8080:8080/api/transport/client/fetch?clientId=${clientId}`
+      `http://171.228.167.35:8080/api/transport/client/fetch?clientId=${clientId}`
     );
     return response.data;
   };
@@ -76,7 +76,7 @@ const ClientUpdateDetail = () => {
     }
 
     // API call to update client details
-    fetch("http://171.228.167.35:8080:8080/api/transport/client/detail/update", {
+    fetch("http://171.228.167.35:8080/api/transport/client/detail/update", {
       method: "PUT",
       headers: {
         Accept: "application/json",

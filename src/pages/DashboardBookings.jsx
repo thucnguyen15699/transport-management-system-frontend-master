@@ -35,7 +35,7 @@ const DashboardBookings = ({ item }) => {
 
   const retrieveTodaysBookings = async () => {
     const response = await axios.get(
-      "http://171.228.167.35:8080:8080/api/transport/client/booking/todays"
+      "http://171.228.167.35:8080/api/transport/client/booking/todays"
     );
     return response.data;
   };
@@ -71,7 +71,7 @@ const DashboardBookings = ({ item }) => {
 
   const retrieveBookingsByStartTimeAndEndTime = async () => {
     const response = await axios.get(
-      "http://171.228.167.35:8080:8080/api/transport/client/booking/search/date-time?startTime=" +
+      "http://171.228.167.35:8080/api/transport/client/booking/search/date-time?startTime=" +
         convertToMillis(startTime) +
         "&endTime=" +
         convertToMillis(endTime)

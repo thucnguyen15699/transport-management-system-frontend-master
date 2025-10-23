@@ -55,7 +55,7 @@ const ViewAllBookings = () => {
 
   const retrieveAllClients = async () => {
     const response = await axios.get(
-      "http://171.228.167.35:8080:8080/api/transport/client/fetch/all",
+      "http://171.228.167.35:8080/api/transport/client/fetch/all",
       {
         headers: {
           //   Authorization: "Bearer " + admin_jwtToken, // Replace with your actual JWT token
@@ -68,7 +68,7 @@ const ViewAllBookings = () => {
 
   const retrieveAllBookings = async () => {
     const response = await axios.get(
-      "http://171.228.167.35:8080:8080/api/transport/client/booking/fetch/all",
+      "http://171.228.167.35:8080/api/transport/client/booking/fetch/all",
       {
         headers: {
           //   Authorization: "Bearer " + admin_jwtToken, // Replace with your actual JWT token
@@ -81,7 +81,7 @@ const ViewAllBookings = () => {
 
   const retrieveAllBookingsByClient = async () => {
     const response = await axios.get(
-      `http://171.228.167.35:8080:8080/api/transport/client/booking/fetch/client-wise?fromClientId=${fromClientId}&toClientId=${toClientId}`,
+      `http://171.228.167.35:8080/api/transport/client/booking/fetch/client-wise?fromClientId=${fromClientId}&toClientId=${toClientId}`,
       {
         headers: {
           // Authorization: "Bearer " + admin_jwtToken, // Replace with your actual JWT token
@@ -115,7 +115,7 @@ const ViewAllBookings = () => {
 
   const retrieveAllBookingsByInvoice = async () => {
     const response = await axios.get(
-      "http://171.228.167.35:8080:8080/api/transport/client/booking/fetch/invoice-wise?invoiceNo=" +
+      "http://171.228.167.35:8080/api/transport/client/booking/fetch/invoice-wise?invoiceNo=" +
         invoiceNo,
       {
         headers: {

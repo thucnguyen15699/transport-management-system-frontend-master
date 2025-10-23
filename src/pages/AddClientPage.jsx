@@ -56,7 +56,7 @@ const AddClientPage = () => {
     formData.append("uploadDocuments", selectedDocument);
 
     axios
-      .post("http://171.228.167.35:8080:8080/api/transport/client/add", formData, {
+      .post("http://171.228.167.35:8080/api/transport/client/add", formData, {
         headers: {
           // Authorization: "Bearer " + guide_jwtToken, // Replace with your actual JWT token
         },

@@ -39,7 +39,7 @@ const EmployeeDetail = () => {
 
   const retrieveAllVehicles = async () => {
     const response = await axios.get(
-      "http://171.228.167.35:8080:8080/api/transport/vehicle/fetch/all",
+      "http://171.228.167.35:8080/api/transport/vehicle/fetch/all",
       {
         headers: {
           //   Authorization: "Bearer " + admin_jwtToken, // Replace with your actual JWT token
@@ -52,7 +52,7 @@ const EmployeeDetail = () => {
 
   const retrieveAllBookings = async () => {
     const response = await axios.get(
-      "http://171.228.167.35:8080:8080/api/transport/client/booking/fetch/all",
+      "http://171.228.167.35:8080/api/transport/client/booking/fetch/all",
       {
         headers: {
           //   Authorization: "Bearer " + admin_jwtToken, // Replace with your actual JWT token
@@ -123,7 +123,7 @@ const EmployeeDetail = () => {
     formData.append("receiptUpload", selectedDocument);
 
     axios
-      .post("http://171.228.167.35:8080:8080/api/user/employee/salary/add", formData, {
+      .post("http://171.228.167.35:8080/api/user/employee/salary/add", formData, {
         headers: {
           // Authorization: "Bearer " + guide_jwtToken, // Replace with your actual JWT token
         },
@@ -187,7 +187,7 @@ const EmployeeDetail = () => {
 
   const retrieveEmployee = async () => {
     const response = await axios.get(
-      `http://171.228.167.35:8080:8080/api/user/fetch/user-id?userId=${employeeId}`
+      `http://171.228.167.35:8080/api/user/fetch/user-id?userId=${employeeId}`
     );
     return response.data;
   };
@@ -345,7 +345,7 @@ const EmployeeDetail = () => {
         </Modal.Header>
         <Modal.Body>
           <iframe
-            src={`http://171.228.167.35:8080:8080/api/user/document/${employee.uploadDocuments}/view`}
+            src={`http://171.228.167.35:8080/api/user/document/${employee.uploadDocuments}/view`}
             width="100%"
             height="100%" // Set height to 100% for full coverage
             style={{ border: "none" }}
@@ -561,7 +561,7 @@ const EmployeeDetail = () => {
         </Modal.Header>
         <Modal.Body>
           <iframe
-            src={`http://171.228.167.35:8080:8080/api/user/document/${selectedSalaryDoc}/view`}
+            src={`http://171.228.167.35:8080/api/user/document/${selectedSalaryDoc}/view`}
             width="100%"
             height="100%" // Set height to 100% for full coverage
             style={{ border: "none" }}
