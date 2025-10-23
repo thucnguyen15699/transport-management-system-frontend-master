@@ -172,7 +172,7 @@ const UpdateEmployeeDetailPage = () => {
       return;
     }
 
-    fetch("http://171.228.167.35:8080/api/user/employee/detail/update", {
+    fetch("http://171.228.167.35:8080:8080/api/user/employee/detail/update", {
       method: "PUT",
       headers: {
         Accept: "application/json",

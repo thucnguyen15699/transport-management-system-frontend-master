@@ -23,7 +23,7 @@ const MentorProfile = () => {
 
   const retrieveUser = async () => {
     const response = await axios.get(
-      "http://171.228.167.35:8080/api/user/fetch/user-id?userId=" + mentor.id
+      "http://171.228.167.35:8080:8080/api/user/fetch/user-id?userId=" + mentor.id
     );
     return response.data;
   };
@@ -49,7 +49,7 @@ const MentorProfile = () => {
                     return (
                       <img
                         src={
-                          "http://171.228.167.35:8080/api/user/" +
+                          "http://171.228.167.35:8080:8080/api/user/" +
                           mentor.mentorDetail.profilePic
                         }
                         className="card-img-top mentor-profile-photo mt-3 rounded-circle"

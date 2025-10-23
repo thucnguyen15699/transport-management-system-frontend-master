@@ -34,7 +34,7 @@ const ViewAllClients = () => {
 
   const retrieveAllClients = async () => {
     const response = await axios.get(
-      "http://171.228.167.35:8080/api/transport/client/fetch/all",
+      "http://171.228.167.35:8080:8080/api/transport/client/fetch/all",
       {
         headers: {
           //   Authorization: "Bearer " + admin_jwtToken, // Replace with your actual JWT token
@@ -47,7 +47,7 @@ const ViewAllClients = () => {
 
   const retrieveAllClientsByName = async () => {
     const response = await axios.get(
-      "http://171.228.167.35:8080/api/transport/client/fetch/name-wise?clientName=" +
+      "http://171.228.167.35:8080:8080/api/transport/client/fetch/name-wise?clientName=" +
         clientName,
       {
         headers: {
@@ -61,7 +61,7 @@ const ViewAllClients = () => {
 
   const deleteClient = (clientId, e) => {
     fetch(
-      "http://171.228.167.35:8080/api/transport/client/delete?clientId=" + clientId,
+      "http://171.228.167.35:8080:8080/api/transport/client/delete?clientId=" + clientId,
       {
         method: "DELETE",
         headers: {

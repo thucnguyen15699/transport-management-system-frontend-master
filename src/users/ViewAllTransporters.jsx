@@ -20,7 +20,7 @@ const ViewAllTransporters = () => {
 
   const retrieveAllUser = async () => {
     const response = await axios.get(
-      "http://171.228.167.35:8080/api/user/fetch/role-wise?role=Transporter",
+      "http://171.228.167.35:8080:8080/api/user/fetch/role-wise?role=Transporter",
       {
         headers: {
           //   Authorization: "Bearer " + admin_jwtToken, // Replace with your actual JWT token
@@ -40,7 +40,7 @@ const ViewAllTransporters = () => {
 
   const deleteTransporter = (transporterId, e) => {
     fetch(
-      "http://171.228.167.35:8080/api/user/transporter/delete?transporterId=" +
+      "http://171.228.167.35:8080:8080/api/user/transporter/delete?transporterId=" +
         transporterId,
       {
         method: "DELETE",

@@ -37,7 +37,7 @@ const AddProfile = () => {
     formData.append("mentorId", mentor.id);
 
     axios
-      .put("http://171.228.167.35:8080/api/user/mentor/detail/update", formData, {
+      .put("http://171.228.167.35:8080:8080/api/user/mentor/detail/update", formData, {
         headers: {
           //    Authorization: "Bearer " + admin_jwtToken, // Replace with your actual JWT token
         },

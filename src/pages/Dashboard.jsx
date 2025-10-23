@@ -52,7 +52,7 @@ const Dashboard = () => {
 
   const retrieveDashboardData = async () => {
     const response = await axios.get(
-      "http://171.228.167.35:8080/api/transport/client/booking/admin/dashboard"
+      "http://171.228.167.35:8080:8080/api/transport/client/booking/admin/dashboard"
     );
     return response.data;
   };
@@ -61,7 +61,7 @@ const Dashboard = () => {
     e.preventDefault();
 
     fetch(
-      "http://171.228.167.35:8080/api/transport/client/booking/search/date-time?startTime=" +
+      "http://171.228.167.35:8080:8080/api/transport/client/booking/search/date-time?startTime=" +
         convertToMillis(startTime) +
         "&endTime=" +
         convertToMillis(endTime),
@@ -112,7 +112,7 @@ const Dashboard = () => {
   };
 
   const getTodaysBookings = (e) => {
-    fetch("http://171.228.167.35:8080/api/transport/client/booking/todays", {
+    fetch("http://171.228.167.35:8080:8080/api/transport/client/booking/todays", {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -165,7 +165,7 @@ const Dashboard = () => {
 
   const markNotificationAsRead = (alertId) => {
     fetch(
-      "http://171.228.167.35:8080/api/transport/client/booking/dashboard/alert/read?alertId=" +
+      "http://171.228.167.35:8080:8080/api/transport/client/booking/dashboard/alert/read?alertId=" +
         alertId,
       {
         method: "GET",
