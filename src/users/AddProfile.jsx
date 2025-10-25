@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-
+import { API_BASE_URL } from "../config/apiconfig";
 const AddProfile = () => {
   const mentor = JSON.parse(sessionStorage.getItem("active-mentor"));
   const mentor_jwtToken = sessionStorage.getItem("mentor-jwtToken");
@@ -37,7 +37,7 @@ const AddProfile = () => {
     formData.append("mentorId", mentor.id);
 
     axios
-      .put("http://171.228.167.35:8080/api/user/mentor/detail/update", formData, {
+      .put(`${API_BASE_URL}/api/user/mentor/detail/update`, formData, {
         headers: {
           //    Authorization: "Bearer " + admin_jwtToken, // Replace with your actual JWT token
         },

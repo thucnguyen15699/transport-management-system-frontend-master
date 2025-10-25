@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-
+import { API_BASE_URL } from "../config/apiconfig";
 const MentorProfile = () => {
   const user = JSON.parse(sessionStorage.getItem("active-mentor"));
   const mentor_jwtToken = sessionStorage.getItem("mentor-jwtToken");
@@ -23,7 +23,7 @@ const MentorProfile = () => {
 
   const retrieveUser = async () => {
     const response = await axios.get(
-      "http://171.228.167.35:8080/api/user/fetch/user-id?userId=" + mentor.id
+      `${API_BASE_URL}/api/user/fetch/user-id?userId=` + mentor.id
     );
     return response.data;
   };
@@ -49,7 +49,7 @@ const MentorProfile = () => {
                     return (
                       <img
                         src={
-                          "http://171.228.167.35:8080/api/user/" +
+                          `${API_BASE_URL}/api/user/` +
                           mentor.mentorDetail.profilePic
                         }
                         className="card-img-top mentor-profile-photo mt-3 rounded-circle"

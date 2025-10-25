@@ -3,7 +3,7 @@ import axios from "axios";
 import React from "react";
 
 import * as XLSX from "xlsx";
-
+import { API_BASE_URL } from "../config/apiconfig";
 const DashboardBookings = ({ item }) => {
   const [trips, setTrips] = useState(item ? item : []);
 
@@ -35,7 +35,7 @@ const DashboardBookings = ({ item }) => {
 
   const retrieveTodaysBookings = async () => {
     const response = await axios.get(
-      "http://171.228.167.35:8080/api/transport/client/booking/todays"
+      `${API_BASE_URL}/api/transport/client/booking/todays`
     );
     return response.data;
   };
@@ -71,7 +71,7 @@ const DashboardBookings = ({ item }) => {
 
   const retrieveBookingsByStartTimeAndEndTime = async () => {
     const response = await axios.get(
-      "http://171.228.167.35:8080/api/transport/client/booking/search/date-time?startTime=" +
+      `${API_BASE_URL}/api/transport/client/booking/search/date-time?startTime=` +
         convertToMillis(startTime) +
         "&endTime=" +
         convertToMillis(endTime)

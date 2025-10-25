@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import { useNavigate, useParams } from "react-router-dom";
-
+import { API_BASE_URL } from "../config/apiconfig";
 const UpdateClientBooking = () => {
   const { bookingId } = useParams();
 
@@ -53,7 +53,7 @@ const UpdateClientBooking = () => {
 
   const retrieveBooking = async () => {
     const response = await axios.get(
-      `http://171.228.167.35:8080/api/transport/client/booking/fetch?bookingId=${bookingId}`
+      `${API_BASE_URL}/api/transport/client/booking/fetch?bookingId=${bookingId}`
     );
     return response.data;
   };
@@ -102,7 +102,7 @@ const UpdateClientBooking = () => {
         ? convertToEpochTime(selectedDeliveredDateTime)
         : existingDeliveredDateTime;
 
-    fetch("http://171.228.167.35:8080/api/transport/client/booking/details/udpate", {
+    fetch(`${API_BASE_URL}/api/transport/client/booking/details/udpate`, {
       method: "PUT",
       headers: {
         Accept: "application/json",

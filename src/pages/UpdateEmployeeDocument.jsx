@@ -3,7 +3,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-
+import { API_BASE_URL } from "../config/apiconfig";
 const UpdateEmployeeDocument = () => {
   const location = useLocation();
   const [user, setUser] = useState(location.state);
@@ -24,7 +24,7 @@ const UpdateEmployeeDocument = () => {
 
     axios
       .put(
-        "http://171.228.167.35:8080/api/user/employee/document/update",
+        `${API_BASE_URL}/api/user/employee/document/update`,
         formData,
         {
           headers: {

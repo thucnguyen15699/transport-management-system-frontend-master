@@ -26,6 +26,8 @@ import total_expenses from "../images/total_expenses.png";
 import DashboardBookings from "./DashboardBookings";
 import { Button, Modal, Form } from "react-bootstrap";
 
+import { API_BASE_URL } from "../config/apiconfig";
+
 const Dashboard = () => {
   const [showModal, setShowModal] = useState(false);
   const handleClose = () => setShowModal(false);
@@ -52,7 +54,7 @@ const Dashboard = () => {
 
   const retrieveDashboardData = async () => {
     const response = await axios.get(
-      "http://171.228.167.35:8080/api/transport/client/booking/admin/dashboard"
+      `${API_BASE_URL}/api/transport/client/booking/admin/dashboard`
     );
     return response.data;
   };
@@ -61,7 +63,7 @@ const Dashboard = () => {
     e.preventDefault();
 
     fetch(
-      "http://171.228.167.35:8080/api/transport/client/booking/search/date-time?startTime=" +
+      `${API_BASE_URL}/api/transport/client/booking/search/date-time?startTime=` +
         convertToMillis(startTime) +
         "&endTime=" +
         convertToMillis(endTime),
@@ -112,7 +114,7 @@ const Dashboard = () => {
   };
 
   const getTodaysBookings = (e) => {
-    fetch("http://171.228.167.35:8080/api/transport/client/booking/todays", {
+    fetch(`${API_BASE_URL}/api/transport/client/booking/todays`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -165,7 +167,7 @@ const Dashboard = () => {
 
   const markNotificationAsRead = (alertId) => {
     fetch(
-      "http://171.228.167.35:8080/api/transport/client/booking/dashboard/alert/read?alertId=" +
+      `${API_BASE_URL}/api/transport/client/booking/dashboard/alert/read?alertId=` +
         alertId,
       {
         method: "GET",

@@ -3,7 +3,7 @@ import axios from "axios";
 import React from "react";
 import { toast, ToastContainer } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-
+import { API_BASE_URL } from "../config/apiconfig";
 const ViewAllVehicles = () => {
   const [vehicles, setVehicles] = useState([]);
 
@@ -34,7 +34,7 @@ const ViewAllVehicles = () => {
 
   const retrieveAllVehicles = async () => {
     const response = await axios.get(
-      "http://171.228.167.35:8080/api/transport/vehicle/fetch/all",
+      `${API_BASE_URL}/api/transport/vehicle/fetch/all`,
       {
         headers: {
           //   Authorization: "Bearer " + admin_jwtToken, // Replace with your actual JWT token
@@ -47,7 +47,7 @@ const ViewAllVehicles = () => {
 
   const retrieveAllVehiclesByNumber = async () => {
     const response = await axios.get(
-      "http://171.228.167.35:8080/api/transport/vehicle/fetch/vehicle-no-wise?vehicleNo=" +
+     `${API_BASE_URL}/api/transport/vehicle/fetch/vehicle-no-wise?vehicleNo=` +
         vehicleNumber,
       {
         headers: {
@@ -68,7 +68,7 @@ const ViewAllVehicles = () => {
 
   const deleteVehicle = (vehicleId, e) => {
     fetch(
-      "http://171.228.167.35:8080/api/transport/vehicle/delete?vehicleId=" +
+      `${API_BASE_URL}/api/transport/vehicle/delete?vehicleId=` +
         vehicleId,
       {
         method: "DELETE",

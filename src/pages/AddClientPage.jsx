@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-
+import { API_BASE_URL } from "../config/apiconfig";
 const AddClientPage = () => {
   const [client, setClient] = useState({
     name: "",
@@ -56,7 +56,7 @@ const AddClientPage = () => {
     formData.append("uploadDocuments", selectedDocument);
 
     axios
-      .post("http://171.228.167.35:8080/api/transport/client/add", formData, {
+      .post(`${API_BASE_URL}/api/transport/client/add`, formData, {
         headers: {
           // Authorization: "Bearer " + guide_jwtToken, // Replace with your actual JWT token
         },

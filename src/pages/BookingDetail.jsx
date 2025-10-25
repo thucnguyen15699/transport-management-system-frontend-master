@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Button, Modal, Form } from "react-bootstrap";
 import { toast, ToastContainer } from "react-toastify";
-
+import { API_BASE_URL } from "../config/apiconfig";
 const BookingDetail = () => {
 
 
@@ -131,7 +131,7 @@ const BookingDetail = () => {
 
   const retrieveAllVehicles = async () => {
     const response = await axios.get(
-      "http://171.228.167.35:8080/api/transport/vehicle/fetch/all",
+      `${API_BASE_URL}/api/transport/vehicle/fetch/all`,
       {
         headers: {
           //   Authorization: "Bearer " + admin_jwtToken, // Replace with your actual JWT token
@@ -144,14 +144,14 @@ const BookingDetail = () => {
 
   const retrieveAllUser = async () => {
     const response = await axios.get(
-      "http://171.228.167.35:8080/api/user/fetch/role-wise?role=Employee"
+      `${API_BASE_URL}/api/user/fetch/role-wise?role=Employee`
     );
     return response.data;
   };
 
   const retrieveBookingDetails = async () => {
     const response = await axios.get(
-      `http://171.228.167.35:8080/api/transport/client/booking/fetch?bookingId=${bookingId}`
+      `${API_BASE_URL}/api/transport/client/booking/fetch?bookingId=${bookingId}`
     );
     return response.data;
   };
@@ -172,7 +172,7 @@ const BookingDetail = () => {
     e.preventDefault();
 
     fetch(
-      "http://171.228.167.35:8080/api/transport/client/booking/employee/add?bookingId=" +
+      `${API_BASE_URL}/api/transport/client/booking/employee/add?bookingId=` +
         bookingId +
         "&employeeId=" +
         employeeId,
@@ -238,7 +238,7 @@ const BookingDetail = () => {
     e.preventDefault();
 
     fetch(
-      "http://171.228.167.35:8080/api/transport/client/booking/vehicle/add?bookingId=" +
+      `${API_BASE_URL}/api/transport/client/booking/vehicle/add?bookingId=` +
         bookingId +
         "&vehicleId=" +
         vehicleId,
@@ -303,7 +303,7 @@ const BookingDetail = () => {
   const handleItemFormSubmit = (e) => {
     e.preventDefault();
 
-    fetch("http://171.228.167.35:8080/api/transport/client/booking/item/add", {
+    fetch(`${API_BASE_URL}/api/transport/client/booking/item/add`, {
       method: "PUT",
       headers: {
         Accept: "application/json",
@@ -365,7 +365,7 @@ const BookingDetail = () => {
     e.preventDefault();
 
     fetch(
-      "http://171.228.167.35:8080/api/transport/client/booking/trip/charges/add",
+      `${API_BASE_URL}/api/transport/client/booking/trip/charges/add`,
       {
         method: "PUT",
         headers: {
@@ -429,7 +429,7 @@ const BookingDetail = () => {
     e.preventDefault();
 
     fetch(
-      "http://171.228.167.35:8080/api/transport/client/booking/price/detail/add",
+      `${API_BASE_URL}/api/transport/client/booking/price/detail/add`,
       {
         method: "PUT",
         headers: {
@@ -493,7 +493,7 @@ const BookingDetail = () => {
     e.preventDefault();
 
     fetch(
-      "http://171.228.167.35:8080/api/transport/client/booking/generate/invoice?bookingId=" +
+      `${API_BASE_URL}/api/transport/client/booking/generate/invoice?bookingId=` +
         bookingId,
       {
         method: "GET",
@@ -1030,7 +1030,7 @@ const BookingDetail = () => {
         </Modal.Header>
         <Modal.Body>
           <iframe
-            src={`http://171.228.167.35:8080/api/user/document/${booking.document}/view`}
+            src={`${API_BASE_URL}/api/user/document/${booking.document}/view`}
             width="100%"
             height="100%"
             style={{ border: "none" }}
@@ -1427,7 +1427,7 @@ const BookingDetail = () => {
         </Modal.Header>
         <Modal.Body>
           <iframe
-            src={`http://171.228.167.35:8080/api/user/document/${selectedDoc}/view`}
+            src={`${API_BASE_URL}/api/user/document/${selectedDoc}/view`}
             width="100%"
             height="100%" // Set height to 100% for full coverage
             style={{ border: "none" }}

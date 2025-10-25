@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import { useNavigate, useParams } from "react-router-dom";
-
+import { API_BASE_URL } from "../config/apiconfig";
 const ClientUpdateDetail = () => {
   const { clientId } = useParams();
   let navigate = useNavigate();
@@ -40,7 +40,7 @@ const ClientUpdateDetail = () => {
   // Fetch client data by ID
   const retrieveClient = async () => {
     const response = await axios.get(
-      `http://171.228.167.35:8080/api/transport/client/fetch?clientId=${clientId}`
+      `${API_BASE_URL}/api/transport/client/fetch?clientId=${clientId}`
     );
     return response.data;
   };
@@ -76,7 +76,7 @@ const ClientUpdateDetail = () => {
     }
 
     // API call to update client details
-    fetch("http://171.228.167.35:8080/api/transport/client/detail/update", {
+    fetch(`${API_BASE_URL}/api/transport/client/detail/update`, {
       method: "PUT",
       headers: {
         Accept: "application/json",

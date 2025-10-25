@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-
+import { API_BASE_URL } from "../config/apiconfig";
 const AddVehiclePage = () => {
   const admin = JSON.parse(sessionStorage.getItem("active-admin"));
   const admin_jwtToken = sessionStorage.getItem("admin-jwtToken");
@@ -69,7 +69,7 @@ const AddVehiclePage = () => {
     formData.append("uploadDocuments", selectedImage1);
 
     axios
-      .post("http://171.228.167.35:8080/api/transport/vehicle/add", formData, {
+      .post(`${API_BASE_URL}/api/transport/vehicle/add`, formData, {
         headers: {
           //       Authorization: "Bearer " + guide_jwtToken, // Replace with your actual JWT token
         },

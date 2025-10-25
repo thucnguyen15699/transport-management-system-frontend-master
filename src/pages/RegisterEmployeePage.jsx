@@ -4,6 +4,7 @@ import { toast, ToastContainer } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 // import data from "./src/danhmucxaphuong.json";
 import data from "../danhmucxaphuong.json";
+import { API_BASE_URL } from "../config/apiconfig";
 const RegisterEmployeePage = () => {
   const admin = JSON.parse(sessionStorage.getItem("active-admin"));
   const admin_jwtToken = sessionStorage.getItem("admin-jwtToken");
@@ -180,7 +181,7 @@ const RegisterEmployeePage = () => {
     formData.append("uploadDocuments", selectedDocuments);
 
     axios
-      .post("http://171.228.167.35:8080/api/user/employee/register", formData, {
+      .post(`${API_BASE_URL}/api/user/employee/register`, formData, {
         headers: {
           //  Authorization: "Bearer " + admin_jwtToken,
         },

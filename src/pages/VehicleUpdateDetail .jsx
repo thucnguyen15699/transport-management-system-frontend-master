@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import { useNavigate, useParams } from "react-router-dom";
-
+import { API_BASE_URL } from "../config/apiconfig";
 const VehicleUpdateDetail = () => {
   const { vehicleId } = useParams();
 
@@ -47,7 +47,7 @@ const VehicleUpdateDetail = () => {
 
   const retrieveVehicle = async () => {
     const response = await axios.get(
-      `http://171.228.167.35:8080/api/transport/vehicle/fetch?vehicleId=${vehicleId}`
+      `${API_BASE_URL}/api/transport/vehicle/fetch?vehicleId=${vehicleId}`
     );
     return response.data;
   };
@@ -86,7 +86,7 @@ const VehicleUpdateDetail = () => {
       return;
     }
 
-    fetch("http://171.228.167.35:8080/api/transport/vehicle/detail/udpate", {
+    fetch(`${API_BASE_URL}/api/transport/vehicle/detail/udpate`, {
       method: "PUT",
       headers: {
         Accept: "application/json",

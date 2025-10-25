@@ -3,7 +3,7 @@ import axios from "axios";
 import React from "react";
 import { toast, ToastContainer } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-
+import { API_BASE_URL } from "../config/apiconfig";
 const ViewAllClients = () => {
   const [clients, setClients] = useState([]);
 
@@ -34,7 +34,7 @@ const ViewAllClients = () => {
 
   const retrieveAllClients = async () => {
     const response = await axios.get(
-      "http://171.228.167.35:8080/api/transport/client/fetch/all",
+      `${API_BASE_URL}/api/transport/client/fetch/all`,
       {
         headers: {
           //   Authorization: "Bearer " + admin_jwtToken, // Replace with your actual JWT token
@@ -47,7 +47,7 @@ const ViewAllClients = () => {
 
   const retrieveAllClientsByName = async () => {
     const response = await axios.get(
-      "http://171.228.167.35:8080/api/transport/client/fetch/name-wise?clientName=" +
+      `${API_BASE_URL}/api/transport/client/fetch/name-wise?clientName=` +
         clientName,
       {
         headers: {
@@ -61,7 +61,7 @@ const ViewAllClients = () => {
 
   const deleteClient = (clientId, e) => {
     fetch(
-      "http://171.228.167.35:8080/api/transport/client/delete?clientId=" + clientId,
+      `${API_BASE_URL}/api/transport/client/delete?clientId=` + clientId,
       {
         method: "DELETE",
         headers: {

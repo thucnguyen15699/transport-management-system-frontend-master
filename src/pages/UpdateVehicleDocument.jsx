@@ -3,7 +3,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-
+import { API_BASE_URL } from "../config/apiconfig";
 const UpdateVehicleDocument = () => {
   const location = useLocation();
   const [vehicle, setVehicle] = useState(location.state);
@@ -24,7 +24,7 @@ const UpdateVehicleDocument = () => {
 
     axios
       .put(
-        "http://171.228.167.35:8080/api/transport/vehicle/document/udpate",
+        `${API_BASE_URL}/api/transport/vehicle/document/udpate`,
         formData,
         {
           headers: {

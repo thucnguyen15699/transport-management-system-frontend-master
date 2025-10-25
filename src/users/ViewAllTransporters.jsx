@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import React from "react";
 import { toast, ToastContainer } from "react-toastify";
-
+import { API_BASE_URL } from "../config/apiconfig";
 const ViewAllTransporters = () => {
   const [allTransporter, setAllTransporter] = useState([]);
   const admin_jwtToken = sessionStorage.getItem("admin-jwtToken");
@@ -20,7 +20,7 @@ const ViewAllTransporters = () => {
 
   const retrieveAllUser = async () => {
     const response = await axios.get(
-      "http://171.228.167.35:8080/api/user/fetch/role-wise?role=Transporter",
+      `${API_BASE_URL}/api/user/fetch/role-wise?role=Transporter`,
       {
         headers: {
           //   Authorization: "Bearer " + admin_jwtToken, // Replace with your actual JWT token
@@ -40,7 +40,7 @@ const ViewAllTransporters = () => {
 
   const deleteTransporter = (transporterId, e) => {
     fetch(
-      "http://171.228.167.35:8080/api/user/transporter/delete?transporterId=" +
+      `${API_BASE_URL}/api/user/transporter/delete?transporterId=` +
         transporterId,
       {
         method: "DELETE",

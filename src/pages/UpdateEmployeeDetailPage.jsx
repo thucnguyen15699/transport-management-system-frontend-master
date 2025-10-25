@@ -3,7 +3,7 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import data from "../danhmucxaphuong.json";
-
+import { API_BASE_URL } from "../config/apiconfig";
 const UpdateEmployeeDetailPage = () => {
   const location = useLocation();
   const { employeeId } = useParams();
@@ -172,7 +172,7 @@ const UpdateEmployeeDetailPage = () => {
       return;
     }
 
-    fetch("http://171.228.167.35:8080/api/user/employee/detail/update", {
+    fetch(`${API_BASE_URL}/api/user/employee/detail/update`, {
       method: "PUT",
       headers: {
         Accept: "application/json",

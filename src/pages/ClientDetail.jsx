@@ -4,7 +4,7 @@ import axios from "axios";
 import { Button, Modal, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
-
+import { API_BASE_URL } from "../config/apiconfig";
 const ClientDetail = () => {
   const statesCities = {
     Maharashtra: ["Mumbai", "Pune", "Nagpur", "Nashik", "Thane"],
@@ -89,7 +89,7 @@ const ClientDetail = () => {
   // Function to retrieve client data from the API
   const retrieveClient = async () => {
     const response = await axios.get(
-      `http://171.228.167.35:8080/api/transport/client/fetch?clientId=${clientId}`
+      `${API_BASE_URL}/api/transport/client/fetch?clientId=${clientId}`
     );
     return response.data;
   };
@@ -117,7 +117,7 @@ const ClientDetail = () => {
   const handleBranchFormSubmit = (e) => {
     e.preventDefault();
 
-    fetch("http://171.228.167.35:8080/api/transport/client/branch/add", {
+    fetch(`${API_BASE_URL}/api/transport/client/branch/add`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -314,7 +314,7 @@ const ClientDetail = () => {
         </Modal.Header>
         <Modal.Body>
           <iframe
-            src={`http://171.228.167.35:8080/api/user/document/${client.uploadDocuments}/view`}
+            src={`${API_BASE_URL}/api/user/document/${client.uploadDocuments}/view`}
             width="100%"
             height="100%"
             style={{ border: "none" }}
