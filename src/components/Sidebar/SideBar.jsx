@@ -39,7 +39,7 @@ const routes = [
     icon: <FaPhoneAlt />,
   },
 ];
-const admin1 = JSON.parse(sessionStorage.getItem("active-admin"));
+// const admin1 = JSON.parse(sessionStorage.getItem("active-admin"));
 const SideBar = ({ children }) => {
   const admin = JSON.parse(sessionStorage.getItem("active-admin"));
   const transporter = JSON.parse(sessionStorage.getItem("active-transporter"));
@@ -175,8 +175,8 @@ const SideBar = ({ children }) => {
     });
   }
 
-  if (admin.emailId === "demo.admin@demo.com") {
-    routes.push({
+  if (admin?.emailId === "demo.admin@demo.com") {
+    userRoutes.push({
       path: "/settings",
       name: "Employee",
       icon: <FaUserTie />,
