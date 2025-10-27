@@ -5,6 +5,7 @@ import { Button, Modal, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import { API_BASE_URL } from "../config/apiconfig";
+import data from "../danhmucxaphuong.json";
 const ClientDetail = () => {
   // const statesCities = {
   //   Maharashtra: ["Mumbai", "Pune", "Nagpur", "Nashik", "Thane"],
@@ -80,27 +81,28 @@ const ClientDetail = () => {
     
       const handleInput = (e) => {
         const { name, value } = e.target;
-    
+
         if (name === "state") {
-          setSelectedState(value);
-          setCities(statesCities[value] || []);
-          setEmployee((prevEmployee) => ({
-            ...prevEmployee,
-            city: "",
-            state: value,
-          }));
+            // Khi chọn Tỉnh/Thành phố (state)
+            setBranchForm((prevForm) => ({
+                ...prevForm,
+                state: value,
+                city: "", // Reset Phường/Xã (city)
+            }));
         } else if (name === "city") {
-          setEmployee((prevEmployee) => ({
-            ...prevEmployee,
-            city: value,
-          }));
+            // Khi chọn Phường/Xã (city)
+            setBranchForm((prevForm) => ({
+                ...prevForm,
+                city: value,
+            }));
         } else {
-          setEmployee((prevEmployee) => ({
-            ...prevEmployee,
-            [name]: value,
-          }));
+            // Xử lý các trường input khác (fullAddress)
+            setBranchForm((prevForm) => ({
+                ...prevForm,
+                [name]: value,
+            }));
         }
-      };
+    };
 
   // const handleInput = (e) => {
   //   setBranchForm({ ...branchForm, [e.target.name]: e.target.value });
