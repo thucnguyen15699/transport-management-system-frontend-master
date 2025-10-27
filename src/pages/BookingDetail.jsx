@@ -961,21 +961,21 @@ const BookingDetail = () => {
             <input
               type="button"
               className="btn custom-bg bg-color mb-3 ms-5"
-              value="Add Employee"
+              value="Thêm nhân viên"
               onClick={handleBranchModalShow}
             />
 
             <input
               type="button"
               className="btn custom-bg bg-color mb-3 ms-5"
-              value="Add Vehicle"
+              value="Thêm xe"
               onClick={handleVehicleModalShow}
             />
 
             <input
               type="button"
               className="btn custom-bg bg-color mb-3 ms-5"
-              value="Add Item"
+              value="Thêm chi tiết hàng"
               onClick={handleItemModalShow}
             />
 
@@ -984,7 +984,7 @@ const BookingDetail = () => {
               <input
                 type="button"
                 className="btn custom-bg bg-color mb-3 ms-5"
-                value="Add Trip Charges"
+                value="Thêm phí chuyến đi"
                 onClick={handleTripChargesModalShow}
               />
             )}
@@ -994,7 +994,7 @@ const BookingDetail = () => {
               <input
                 type="button"
                 className="btn custom-bg bg-color mb-3 ms-5"
-                value="Add Trip Price"
+                value="Thêm chi phí chuyến đi"
                 onClick={handleTripPriceModalShow}
               />
             )}
@@ -1002,14 +1002,14 @@ const BookingDetail = () => {
             <input
               type="button"
               className="btn custom-bg bg-color mb-3 ms-5"
-              value="Update Booking Details"
+              value="Cập nhật chi tiết đặt xe"
               onClick={updateBookingDetails}
             />
 
             <input
               type="button"
               className="btn custom-bg bg-color mb-3 ms-4"
-              value="Update Booking Document"
+              value="Cập nhật tài liệu đặt xe"
               onClick={updateBookingDocument}
             />
 

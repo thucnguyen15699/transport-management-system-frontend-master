@@ -39,7 +39,7 @@ const routes = [
     icon: <FaPhoneAlt />,
   },
 ];
-
+const admin1 = JSON.parse(sessionStorage.getItem("active-admin"));
 const SideBar = ({ children }) => {
   const admin = JSON.parse(sessionStorage.getItem("active-admin"));
   const transporter = JSON.parse(sessionStorage.getItem("active-transporter"));
@@ -106,42 +106,42 @@ const SideBar = ({ children }) => {
           },
         ],
       },
-      {
-        path: "/settings",
-        name: "Client",
-        icon: <FaBriefcase />,
-        exact: true,
-        subRoutes: [
-          {
-            path: "/admin/client/add",
-            name: "Add",
-            icon: <FaUserPlus />,
-          },
-          {
-            path: "/admin/client/view",
-            name: "View",
-            icon: <FaSignInAlt />,
-          },
-        ],
-      },
-      {
-        path: "/settings",
-        name: "Order Booking",
-        icon: <FaTruckLoading />,
-        exact: true,
-        subRoutes: [
-          {
-            path: "/admin/client/order/booking",
-            name: "Add",
-            icon: <FaUserPlus />,
-          },
-          {
-            path: "/admin/client/booking/view",
-            name: "View",
-            icon: <FaSignInAlt />,
-          },
-        ],
-      },
+      // {
+      //   path: "/settings",
+      //   name: "Client",
+      //   icon: <FaBriefcase />,
+      //   exact: true,
+      //   subRoutes: [
+      //     {
+      //       path: "/admin/client/add",
+      //       name: "Add",
+      //       icon: <FaUserPlus />,
+      //     },
+      //     {
+      //       path: "/admin/client/view",
+      //       name: "View",
+      //       icon: <FaSignInAlt />,
+      //     },
+      //   ],
+      // },
+      // {
+      //   path: "/settings",
+      //   name: "Order Booking",
+      //   icon: <FaTruckLoading />,
+      //   exact: true,
+      //   subRoutes: [
+      //     {
+      //       path: "/admin/client/order/booking",
+      //       name: "Add",
+      //       icon: <FaUserPlus />,
+      //     },
+      //     {
+      //       path: "/admin/client/booking/view",
+      //       name: "View",
+      //       icon: <FaSignInAlt />,
+      //     },
+      //   ],
+      // },
       {
         path: "/user/admin/logout",
         name: "Logout",
@@ -173,6 +173,38 @@ const SideBar = ({ children }) => {
       name: "Login",
       icon: <FaSignInAlt />,
     });
+  }
+
+  if (admin1.emailId == "demo.admin@demo.com") {
+    routes.push({
+      path: "/settings",
+      name: "Employee",
+      icon: <FaUserTie />,
+      exact: true,
+      subRoutes: [
+        { path: "/admin/employee/register", name: "Register", icon: <FaUserPlus /> },
+        { path: "/admin/employee/view", name: "View", icon: <FaSignInAlt /> },
+      ],
+    },
+    {
+        path: "/settings",
+        name: "Client",
+        icon: <FaBriefcase />,
+        exact: true,
+        subRoutes: [
+          {
+            path: "/admin/client/add",
+            name: "Add",
+            icon: <FaUserPlus />,
+          },
+          {
+            path: "/admin/client/view",
+            name: "View",
+            icon: <FaSignInAlt />,
+          },
+        ],
+      },
+  );
   }
 
   const [isOpen, setIsOpen] = useState(false);
@@ -236,7 +268,7 @@ const SideBar = ({ children }) => {
                   exit="hidden"
                   className="logo"
                 >
-                  <b> LogiHP</b>
+                  <b>LogiHP</b>
                 </motion.h1>
               )}
             </AnimatePresence>

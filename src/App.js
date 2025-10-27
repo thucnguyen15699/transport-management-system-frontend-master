@@ -38,6 +38,7 @@ import UpdateClientBooking from "./pages/UpdateClientBooking";
 import Dashboard from "./pages/Dashboard";
 
 function App() {
+  const admin = JSON.parse(sessionStorage.getItem("active-admin"));
   return (
     <Router>
       <SideBar>
@@ -79,10 +80,13 @@ function App() {
             path="/admin/vehicle/document/update"
             element={<UpdateVehicleDocument />}
           />
+          {/* add new by thucnd */}
+          
           <Route
             path="/admin/employee/register"
             element={<RegisterEmployeePage />}
           />
+          
           <Route path="/admin/employee/view" element={<ViewAllEmployees />} />
           <Route
             path="/admin/employee/:employeeId/detail"
