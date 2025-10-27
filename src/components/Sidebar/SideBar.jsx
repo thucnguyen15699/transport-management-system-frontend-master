@@ -176,16 +176,8 @@ const SideBar = ({ children }) => {
   }
 
   if (admin?.emailId === "demo.admin@demo.com") {
-    userRoutes.push({
-      path: "/settings",
-      name: "Employee",
-      icon: <FaUserTie />,
-      exact: true,
-      subRoutes: [
-        { path: "/admin/employee/register", name: "Register", icon: <FaUserPlus /> },
-        { path: "/admin/employee/view", name: "View", icon: <FaSignInAlt /> },
-      ],
-    },
+    userRoutes.push(
+      
     {
         path: "/settings",
         name: "Client",
@@ -204,6 +196,24 @@ const SideBar = ({ children }) => {
           },
         ],
       },
+      {
+        path: "/settings",
+        name: "Order Booking",
+        icon: <FaTruckLoading />,
+        exact: true,
+        subRoutes: [
+          {
+            path: "/admin/client/order/booking",
+            name: "Add",
+            icon: <FaUserPlus />,
+          },
+          {
+            path: "/admin/client/booking/view",
+            name: "View",
+            icon: <FaSignInAlt />,
+          },
+        ],
+      }
   );
   }
 
