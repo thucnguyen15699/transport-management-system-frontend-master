@@ -175,7 +175,7 @@ const SideBar = ({ children }) => {
     });
   }
 
-  if (admin1.emailId == "demo.admin@demo.com") {
+  if (admin.emailId == "demo.admin@demo.com") {
     routes.push({
       path: "/settings",
       name: "Employee",
