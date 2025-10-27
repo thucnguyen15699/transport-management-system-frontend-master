@@ -6,49 +6,49 @@ import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import { API_BASE_URL } from "../config/apiconfig";
 const ClientDetail = () => {
-  const statesCities = {
-    Maharashtra: ["Mumbai", "Pune", "Nagpur", "Nashik", "Thane"],
-    Gujarat: ["Ahmedabad", "Surat", "Vadodara", "Rajkot", "Bhavnagar"],
-    Karnataka: ["Bangalore", "Mysore", "Mangalore", "Hubli", "Belgaum"],
-    TamilNadu: ["Chennai", "Coimbatore", "Madurai", "Salem", "Tiruchirappalli"],
-    UttarPradesh: ["Lucknow", "Kanpur", "Varanasi", "Agra", "Meerut"],
-    Rajasthan: ["Jaipur", "Jodhpur", "Udaipur", "Ajmer", "Bikaner"],
-    WestBengal: ["Kolkata", "Howrah", "Durgapur", "Siliguri", "Asansol"],
-    Punjab: ["Ludhiana", "Amritsar", "Jalandhar", "Patiala", "Bathinda"],
-    Haryana: ["Gurgaon", "Faridabad", "Panipat", "Rohtak", "Karnal"],
-    MadhyaPradesh: ["Bhopal", "Indore", "Gwalior", "Jabalpur", "Ujjain"],
-    Bihar: ["Patna", "Gaya", "Bhagalpur", "Muzaffarpur", "Purnia"],
-    Odisha: ["Bhubaneswar", "Cuttack", "Rourkela", "Sambalpur", "Puri"],
-    AndhraPradesh: [
-      "Vijayawada",
-      "Visakhapatnam",
-      "Guntur",
-      "Tirupati",
-      "Kakinada",
-    ],
-    Telangana: ["Hyderabad", "Warangal", "Nizamabad", "Khammam", "Karimnagar"],
-    Kerala: ["Thiruvananthapuram", "Kochi", "Kozhikode", "Thrissur", "Kollam"],
-    Delhi: ["New Delhi", "Dwarka", "Saket", "Rohini", "Janakpuri"],
-    Assam: ["Guwahati", "Dibrugarh", "Silchar", "Jorhat", "Tinsukia"],
-    Chhattisgarh: ["Raipur", "Bilaspur", "Durg", "Bhilai", "Korba"],
-    Jharkhand: ["Ranchi", "Jamshedpur", "Dhanbad", "Bokaro", "Deoghar"],
-    Uttarakhand: ["Dehradun", "Haridwar", "Rishikesh", "Haldwani", "Nainital"],
-    HimachalPradesh: ["Shimla", "Manali", "Dharamshala", "Solan", "Mandi"],
-    JammuAndKashmir: ["Srinagar", "Jammu", "Leh", "Anantnag", "Baramulla"],
-    Goa: ["Panaji", "Margao", "Vasco da Gama", "Mapusa", "Ponda"],
-    Tripura: ["Agartala", "Udaipur", "Dharmanagar", "Kailashahar", "Ambassa"],
-    Meghalaya: ["Shillong", "Tura", "Jowai", "Nongpoh", "Baghmara"],
-    Manipur: ["Imphal", "Thoubal", "Bishnupur", "Kakching", "Churachandpur"],
-    ArunachalPradesh: ["Itanagar", "Tawang", "Pasighat", "Ziro", "Roing"],
-    Mizoram: ["Aizawl", "Lunglei", "Saiha", "Champhai", "Serchhip"],
-    Nagaland: ["Kohima", "Dimapur", "Mokokchung", "Wokha", "Mon"],
-    Sikkim: ["Gangtok", "Namchi", "Pelling", "Ravangla", "Gyalshing"],
-  };
+  // const statesCities = {
+  //   Maharashtra: ["Mumbai", "Pune", "Nagpur", "Nashik", "Thane"],
+  //   Gujarat: ["Ahmedabad", "Surat", "Vadodara", "Rajkot", "Bhavnagar"],
+  //   Karnataka: ["Bangalore", "Mysore", "Mangalore", "Hubli", "Belgaum"],
+  //   TamilNadu: ["Chennai", "Coimbatore", "Madurai", "Salem", "Tiruchirappalli"],
+  //   UttarPradesh: ["Lucknow", "Kanpur", "Varanasi", "Agra", "Meerut"],
+  //   Rajasthan: ["Jaipur", "Jodhpur", "Udaipur", "Ajmer", "Bikaner"],
+  //   WestBengal: ["Kolkata", "Howrah", "Durgapur", "Siliguri", "Asansol"],
+  //   Punjab: ["Ludhiana", "Amritsar", "Jalandhar", "Patiala", "Bathinda"],
+  //   Haryana: ["Gurgaon", "Faridabad", "Panipat", "Rohtak", "Karnal"],
+  //   MadhyaPradesh: ["Bhopal", "Indore", "Gwalior", "Jabalpur", "Ujjain"],
+  //   Bihar: ["Patna", "Gaya", "Bhagalpur", "Muzaffarpur", "Purnia"],
+  //   Odisha: ["Bhubaneswar", "Cuttack", "Rourkela", "Sambalpur", "Puri"],
+  //   AndhraPradesh: [
+  //     "Vijayawada",
+  //     "Visakhapatnam",
+  //     "Guntur",
+  //     "Tirupati",
+  //     "Kakinada",
+  //   ],
+  //   Telangana: ["Hyderabad", "Warangal", "Nizamabad", "Khammam", "Karimnagar"],
+  //   Kerala: ["Thiruvananthapuram", "Kochi", "Kozhikode", "Thrissur", "Kollam"],
+  //   Delhi: ["New Delhi", "Dwarka", "Saket", "Rohini", "Janakpuri"],
+  //   Assam: ["Guwahati", "Dibrugarh", "Silchar", "Jorhat", "Tinsukia"],
+  //   Chhattisgarh: ["Raipur", "Bilaspur", "Durg", "Bhilai", "Korba"],
+  //   Jharkhand: ["Ranchi", "Jamshedpur", "Dhanbad", "Bokaro", "Deoghar"],
+  //   Uttarakhand: ["Dehradun", "Haridwar", "Rishikesh", "Haldwani", "Nainital"],
+  //   HimachalPradesh: ["Shimla", "Manali", "Dharamshala", "Solan", "Mandi"],
+  //   JammuAndKashmir: ["Srinagar", "Jammu", "Leh", "Anantnag", "Baramulla"],
+  //   Goa: ["Panaji", "Margao", "Vasco da Gama", "Mapusa", "Ponda"],
+  //   Tripura: ["Agartala", "Udaipur", "Dharmanagar", "Kailashahar", "Ambassa"],
+  //   Meghalaya: ["Shillong", "Tura", "Jowai", "Nongpoh", "Baghmara"],
+  //   Manipur: ["Imphal", "Thoubal", "Bishnupur", "Kakching", "Churachandpur"],
+  //   ArunachalPradesh: ["Itanagar", "Tawang", "Pasighat", "Ziro", "Roing"],
+  //   Mizoram: ["Aizawl", "Lunglei", "Saiha", "Champhai", "Serchhip"],
+  //   Nagaland: ["Kohima", "Dimapur", "Mokokchung", "Wokha", "Mon"],
+  //   Sikkim: ["Gangtok", "Namchi", "Pelling", "Ravangla", "Gyalshing"],
+  // };
 
-  const states = Object.keys(statesCities);
+  // const states = Object.keys(statesCities);
 
-  const [selectedState, setSelectedState] = useState("");
-  const [cities, setCities] = useState([]);
+  // const [selectedState, setSelectedState] = useState("");
+  // const [cities, setCities] = useState([]);
 
   const { clientId } = useParams();
   const [client, setClient] = useState({
@@ -63,9 +63,48 @@ const ClientDetail = () => {
     clientId: clientId,
   });
 
-  const handleInput = (e) => {
-    setBranchForm({ ...branchForm, [e.target.name]: e.target.value });
-  };
+  const [statesCities, setStatesCities] = useState({});
+    const [states, setStates] = useState([]);
+    const [selectedState, setSelectedState] = useState("");
+    const [cities, setCities] = useState([]);
+  
+  
+    useEffect(() => {
+        const mapping = {};
+        data.forEach((tinh) => {
+          mapping[tinh.tentinhmoi] = tinh.phuongxa.map((px) => px.tenphuongxa);
+        });
+        setStatesCities(mapping);
+        setStates(Object.keys(mapping));
+      }, []);
+    
+      const handleInput = (e) => {
+        const { name, value } = e.target;
+    
+        if (name === "state") {
+          setSelectedState(value);
+          setCities(statesCities[value] || []);
+          setEmployee((prevEmployee) => ({
+            ...prevEmployee,
+            city: "",
+            state: value,
+          }));
+        } else if (name === "city") {
+          setEmployee((prevEmployee) => ({
+            ...prevEmployee,
+            city: value,
+          }));
+        } else {
+          setEmployee((prevEmployee) => ({
+            ...prevEmployee,
+            [name]: value,
+          }));
+        }
+      };
+
+  // const handleInput = (e) => {
+  //   setBranchForm({ ...branchForm, [e.target.name]: e.target.value });
+  // };
 
   const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
