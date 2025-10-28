@@ -88,24 +88,24 @@ const SideBar = ({ children }) => {
           },
         ],
       },
-      {
-        path: "/settings",
-        name: "Employee",
-        icon: <FaUserTie />,
-        exact: true,
-        subRoutes: [
-          {
-            path: "/admin/employee/register",
-            name: "Register",
-            icon: <FaUserPlus />,
-          },
-          {
-            path: "/admin/employee/view",
-            name: "View",
-            icon: <FaSignInAlt />,
-          },
-        ],
-      },
+      // {
+      //   path: "/settings",
+      //   name: "Employee",
+      //   icon: <FaUserTie />,
+      //   exact: true,
+      //   subRoutes: [
+      //     {
+      //       path: "/admin/employee/register",
+      //       name: "Register",
+      //       icon: <FaUserPlus />,
+      //     },
+      //     {
+      //       path: "/admin/employee/view",
+      //       name: "View",
+      //       icon: <FaSignInAlt />,
+      //     },
+      //   ],
+      // },
       // {
       //   path: "/settings",
       //   name: "Client",
@@ -124,24 +124,24 @@ const SideBar = ({ children }) => {
       //     },
       //   ],
       // },
-      // {
-      //   path: "/settings",
-      //   name: "Order Booking",
-      //   icon: <FaTruckLoading />,
-      //   exact: true,
-      //   subRoutes: [
-      //     {
-      //       path: "/admin/client/order/booking",
-      //       name: "Add",
-      //       icon: <FaUserPlus />,
-      //     },
-      //     {
-      //       path: "/admin/client/booking/view",
-      //       name: "View",
-      //       icon: <FaSignInAlt />,
-      //     },
-      //   ],
-      // },
+      {
+        path: "/settings",
+        name: "Order Booking",
+        icon: <FaTruckLoading />,
+        exact: true,
+        subRoutes: [
+          {
+            path: "/admin/client/order/booking",
+            name: "Add",
+            icon: <FaUserPlus />,
+          },
+          {
+            path: "/admin/client/booking/view",
+            name: "View",
+            icon: <FaSignInAlt />,
+          },
+        ],
+      },
       {
         path: "/user/admin/logout",
         name: "Logout",
@@ -198,22 +198,22 @@ const SideBar = ({ children }) => {
       },
       {
         path: "/settings",
-        name: "Order Booking",
-        icon: <FaTruckLoading />,
+        name: "Employee",
+        icon: <FaUserTie />,
         exact: true,
         subRoutes: [
           {
-            path: "/admin/client/order/booking",
-            name: "Add",
+            path: "/admin/employee/register",
+            name: "Register",
             icon: <FaUserPlus />,
           },
           {
-            path: "/admin/client/booking/view",
+            path: "/admin/employee/view",
             name: "View",
             icon: <FaSignInAlt />,
           },
         ],
-      }
+      },
   );
   }
 
