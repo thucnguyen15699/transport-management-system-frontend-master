@@ -88,42 +88,42 @@ const SideBar = ({ children }) => {
           },
         ],
       },
-      // {
-      //   path: "/settings",
-      //   name: "Employee",
-      //   icon: <FaUserTie />,
-      //   exact: true,
-      //   subRoutes: [
-      //     {
-      //       path: "/admin/employee/register",
-      //       name: "Register",
-      //       icon: <FaUserPlus />,
-      //     },
-      //     {
-      //       path: "/admin/employee/view",
-      //       name: "View",
-      //       icon: <FaSignInAlt />,
-      //     },
-      //   ],
-      // },
-      // {
-      //   path: "/settings",
-      //   name: "Client",
-      //   icon: <FaBriefcase />,
-      //   exact: true,
-      //   subRoutes: [
-      //     {
-      //       path: "/admin/client/add",
-      //       name: "Add",
-      //       icon: <FaUserPlus />,
-      //     },
-      //     {
-      //       path: "/admin/client/view",
-      //       name: "View",
-      //       icon: <FaSignInAlt />,
-      //     },
-      //   ],
-      // },
+      {
+        path: "/settings",
+        name: "Employee",
+        icon: <FaUserTie />,
+        exact: true,
+        subRoutes: [
+          {
+            path: "/admin/employee/register",
+            name: "Register",
+            icon: <FaUserPlus />,
+          },
+          {
+            path: "/admin/employee/view",
+            name: "View",
+            icon: <FaSignInAlt />,
+          },
+        ],
+      },
+      {
+        path: "/settings",
+        name: "Client",
+        icon: <FaBriefcase />,
+        exact: true,
+        subRoutes: [
+          {
+            path: "/admin/client/add",
+            name: "Add",
+            icon: <FaUserPlus />,
+          },
+          {
+            path: "/admin/client/view",
+            name: "View",
+            icon: <FaSignInAlt />,
+          },
+        ],
+      },
       {
         path: "/settings",
         name: "Order Booking",
@@ -175,47 +175,47 @@ const SideBar = ({ children }) => {
     });
   }
 
-  if (admin?.emailId === "demo.admin@demo.com") {
-    userRoutes.push(
+  // if (admin?.emailId === "demo.admin@demo.com") {
+  //   userRoutes.push(
       
-    {
-        path: "/settings",
-        name: "Client",
-        icon: <FaBriefcase />,
-        exact: true,
-        subRoutes: [
-          {
-            path: "/admin/client/add",
-            name: "Add",
-            icon: <FaUserPlus />,
-          },
-          {
-            path: "/admin/client/view",
-            name: "View",
-            icon: <FaSignInAlt />,
-          },
-        ],
-      },
-      {
-        path: "/settings",
-        name: "Employee",
-        icon: <FaUserTie />,
-        exact: true,
-        subRoutes: [
-          {
-            path: "/admin/employee/register",
-            name: "Register",
-            icon: <FaUserPlus />,
-          },
-          {
-            path: "/admin/employee/view",
-            name: "View",
-            icon: <FaSignInAlt />,
-          },
-        ],
-      },
-  );
-  }
+  //   {
+  //       path: "/settings",
+  //       name: "Client",
+  //       icon: <FaBriefcase />,
+  //       exact: true,
+  //       subRoutes: [
+  //         {
+  //           path: "/admin/client/add",
+  //           name: "Add",
+  //           icon: <FaUserPlus />,
+  //         },
+  //         {
+  //           path: "/admin/client/view",
+  //           name: "View",
+  //           icon: <FaSignInAlt />,
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       path: "/settings",
+  //       name: "Employee",
+  //       icon: <FaUserTie />,
+  //       exact: true,
+  //       subRoutes: [
+  //         {
+  //           path: "/admin/employee/register",
+  //           name: "Register",
+  //           icon: <FaUserPlus />,
+  //         },
+  //         {
+  //           path: "/admin/employee/view",
+  //           name: "View",
+  //           icon: <FaSignInAlt />,
+  //         },
+  //       ],
+  //     },
+  // );
+  // }
 
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
